@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+<header>
+  <h1>My Dashboard</h1>
+</header>
+
+<nav>
+  <button onclick="showSection('todo-section')">Weekly To-Do</button>
+  <button onclick="showSection('budget-section')">Monthly Budget</button>
+  <button onclick="showSection('habits-section')">Habits</button>
+  <button onclick="showSection('diary-section')">Diary</button>
+  <button onclick="showSection('calendar-section')">Calendar</button>
+</nav>
+
+<section id="todo-section" class="page-section">
+  <div class="todo-header">
+    <button id="prevWeek">‹</button>
+    <span id="weekLabel"></span>
+    <button id="nextWeek">›</button>
+    <button id="deleteWeek" class="danger">Delete week</button>
+  </div>
+
+  <div class="todo-input">
+    <select id="todoDay">
+      <option value="0">Monday</option>
+      <option value="1">Tuesday</option>
+      <option value="2">Wednesday</option>
+      <option value="3">Thursday</option>
+      <option value="4">Friday</option>
+      <option value="5">Saturday</option>
+      <option value="6">Sunday</option>
+    </select>
+
+    <input id="todoText" placeholder="Task..." />
+    <input id="todoNote" placeholder="Note (optional)" />
+    <button id="addTodo">Add</button>
+  </div>
+
+  <div id="todoDays"></div>
+</section>
+
+
+<section id="budget-section" class="page-section">
+  <h2>Monthly Budget</h2>
+
+  <div id="month-controls">
+    <button id="prev-month">&lt;</button>
+    <span id="current-month">Month</span>
+    <button id="next-month">&gt;</button>
+  </div>
+
+  <div class="budget-input">
+    <label>Income: </label>
+    <input type="number" id="income" placeholder="0">
+  </div>
+
+  <div class="budget-expenses">
+    <h3>Expenses</h3>
+    <div class="expense-input">
+      <input type="text" id="expense-name" placeholder="Expense name">
+      <input type="number" id="expense-amount" placeholder="Amount">
+      <button id="add-expense">Add</button>
+    </div>
+    <ul id="expense-list"></ul>
+  </div>
+
+  <div class="budget-savings">
+    <p>Left after expenses: <span id="left-after-expenses">0</span></p>
+    <h3>Savings: </h3>
+    <input type="number" id="savings" placeholder="0">
+    <p>Left after savings: <span id="left-after-savings">0</span></p>
+  </div>
+
+  <div class="budget-extra">
+    <h3>Extra / Irregular Expenses</h3>
+    <div class="extra-input">
+      <input type="text" id="extra-name" placeholder="Extra name">
+      <input type="number" id="extra-amount" placeholder="Amount">
+      <button id="add-extra">Add</button>
+    </div>
+    <ul id="extra-list"></ul>
+  </div>
+
+  <p>Total left: <span id="final-left">0</span></p>
+</section>
+
+<section id="habits-section" class="page-section">
+  <div class="habits-header">
+    <button id="habitsPrev">‹</button>
+    <span id="habitsWeekLabel"></span>
+    <button id="habitsNext">›</button>
+    <button id="deleteHabitsWeek" class="danger">Delete week</button>
+  </div>
+
+  <div class="habits-input">
+    <input id="habitName" placeholder="New habit..." />
+    <button id="addHabit">Add</button>
+  </div>
+
+  <div id="habitsTable"></div>
+</section>
+
+
+<section id="diary-section" class="page-section">
+  <h2>Diary</h2>
+
+  <div class="diary-input">
+    <input type="date" id="diaryDate">
+    <textarea id="diaryText" placeholder="Write your entry..."></textarea>
+    <button id="saveDiary">Save entry</button>
+  </div>
+
+  <div class="diary-search">
+    <input type="date" id="searchDate">
+    <button id="searchDiary">Search</button>
+  </div>
+
+  <ul id="diaryList"></ul>
+</section>
+
+<section id="calendar-section" class="page-section">
+  <h2>Calendar</h2>
+
+  <div class="calendar-header">
+    <button id="prevMonth">‹</button>
+    <span id="monthLabel"></span>
+    <button id="nextMonth">›</button>
+  </div>
+
+  <div id="calendarGrid"></div>
+
+  <h3>Add Event</h3>
+  <input type="date" id="eventDate">
+  <input type="text" id="eventTitle" placeholder="Event title">
+  <input type="text" id="eventNote" placeholder="Optional note">
+  <button id="addEvent">Add Event</button>
+
+  <div id="calendarDiaryEntries"></div>
+</section>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
